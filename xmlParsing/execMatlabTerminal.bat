@@ -1,0 +1,1 @@
+powershell.exe -ExecutionPolicy ByPass -noexit -command "& cd 'C:\Program Files\MATLAB\R2017b\bin\'; matlab.exe -nodisplay -nosplash -nodesktop -r \"run('C:\Users\Podengos\Documents\GitHub\Path-Following\xmlParsing\xmlTestCode.m');\"; timeout 2; exit

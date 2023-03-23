@@ -1,8 +1,5 @@
 %%
-v2
-clc
-clear all
-close all
+clc, clear all, close all
 
 %profile on
 

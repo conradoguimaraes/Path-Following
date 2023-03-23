@@ -1,0 +1,11 @@
+<trajectories>
+	<author>Conrado</author>
+	<releaseDate>16:41 23/03/2023</releaseDate>
+	<matlabrelease>9.3.0.713579 (R2017b)</matlabrelease>
+	
+	<trajectory name="circle" inputs="1" outputs="2">
+		<centerX>10</centerX>
+		<centerY>10</centerY>
+		<radius>5</radius>
+	</trajectory>
+</trajectories>
