@@ -79,7 +79,6 @@ set(gcf, 'Position', get(0, 'Screensize'));
 
 %Passar as retas para arrays de muitos pontos
 %para depois os percorrermos no ciclo while
-
 reta1Xvector = linspace(X_reta1(1), X_reta1(2), length(Xarc2));
 reta1Yvector = linspace(Y_reta1(1), Y_reta1(2), length(Xarc2));
 
