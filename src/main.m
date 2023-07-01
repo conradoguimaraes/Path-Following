@@ -30,7 +30,7 @@ if (shape == "8shape")
     Ki = 0.1
     Kd = 27.3
     
-    [custo,h1,h3] = CostControl_PD_KpKdKi(simulationTime,Pxatual, Pyatual, ...
+    [custo,h1,h3] = CostControl_8shape_PID_KpKdKi(simulationTime,Pxatual, Pyatual, ...
                 Dx1, Dy1, Ex2, Ey2, Ex1, Ey1, Dx2, Dy2, ... 
                 R1, R2, Cx1, Cy1, Cx2, Cy2, ...
                 state, Kp, Kd, Ki, threshold, Q)
@@ -68,7 +68,7 @@ elseif (shape == "ellipsis")
                               Dx1, Dy1, Ex1, Ey1, Dx2, Dy2, Ex2, Ey2, ...
                               Cx1, Cy1, Cx2 , Cy2, R1, R2,delta)
     
-    run('setPIDparams.m')
+    run('setPIDparams.m');
     simulationTime = 160;
     Kp = 19
     Ki = 0.075
@@ -92,7 +92,6 @@ warning on
 warning('Save plot&figure?')
 R = input('(1)YES  (else)NO > ');
 if (R==1)
-    
     savePlot(figureFilename)
     saveFigure(figureFilename)
 end

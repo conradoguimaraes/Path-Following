@@ -39,6 +39,7 @@ function [cost,handler1,handler3] = CostControl_Ellipsis_PID_KpKdKi(simulationTi
 
     thetad = 0;
     vehicleImage = -1;
+    VPlot = -1;
     singleFigure = true;
     
     %two laps with color difference:
@@ -171,13 +172,19 @@ function [cost,handler1,handler3] = CostControl_Ellipsis_PID_KpKdKi(simulationTi
         thetad = rad2deg(th);
         xrotated = x;
         yrotated = y;
+%         VPlot = pvec(h1, VPlot,xrotated,yrotated,1,thetad);
         try
-            vehicleImage = plotVehicleV2(xrotated,yrotated,thetad, vehicleImage);
+%             vehicleImage = plotVehicleV2(xrotated,yrotated,thetad, vehicleImage);
+            
         catch
         end
+        x = 20
+        y = 30
+        r = 5
+        fi = 45
+        pvec(h1, VPlot,round(x),round(y),r,fi)
         
-        
-        
+        break
         ax1 = gca;
     
         

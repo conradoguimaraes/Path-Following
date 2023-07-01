@@ -1,4 +1,4 @@
-function [cost,handler1,handler3] = CostControl_PD_KpKdKi(simulationTime,Px, Py, Dx1, Dy1, Ex2, Ey2, Ex1, Ey1, Dx2, Dy2, R1, R2, Cx1, Cy1, Cx2, Cy2, state, Kp, Kd, Ki, threshold, Q)
+function [cost,handler1,handler3] = CostControl_8shape_PID_KpKdKi(simulationTime,Px, Py, Dx1, Dy1, Ex2, Ey2, Ex1, Ey1, Dx2, Dy2, R1, R2, Cx1, Cy1, Cx2, Cy2, state, Kp, Kd, Ki, threshold, Q)
 
     T = simulationTime;
     h = 0.5;

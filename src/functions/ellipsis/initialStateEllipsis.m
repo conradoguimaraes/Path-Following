@@ -16,10 +16,10 @@ function [state, Q, d] = initialState(Px,Py, Dx1, Dy1, Ex1, Ey1, Dx2, Dy2, Ex2, 
 
 %     D1E2 = sqrt((Dx1-Ex2)^2 + (Dy1-Ey2)^2);
 %     E1D2 = sqrt((Ex1-Dx2)^2 + (Ey1-Dy2)^2);
-    fprintf("D2E2 %f\n", d_retaD2E2)
-    fprintf("D1E1 %f\n", d_retaD1E1)
-    fprintf("aD1D2 %f\n", d_arcoD2D1)
-    fprintf("aE1E2 %f\n", d_arcoE1E2)
+%     fprintf("D2E2 %f\n", d_retaD2E2)
+%     fprintf("D1E1 %f\n", d_retaD1E1)
+%     fprintf("aD1D2 %f\n", d_arcoD2D1)
+%     fprintf("aE1E2 %f\n", d_arcoE1E2)
     if(min([d_retaD2E2 d_retaD1E1 d_arcoD2D1 d_arcoE1E2]) == d_retaD2E2)
         state = 0;
         Q = Q01;
