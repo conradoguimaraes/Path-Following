@@ -5,6 +5,7 @@ run('init.m')
 shapes = ["8shape", "ellipsis"];
 shape = shapes(2);
 % profile on
+simulationTime = askSimulationTime();
 if (shape == "8shape")
     run('eightShape_GlobalVars.m')
     run('eightShape_Params.m')
@@ -24,11 +25,13 @@ if (shape == "8shape")
                               Cx1, Cy1, Cx2 , Cy2, R1, R2, ...
                               intersectX, delta)
     
-    run('setPIDparams.m')
-    simulationTime = 160;
+    %run('setPIDparams.m')
     Kp = 17
     Ki = 0.1
     Kd = 27.3
+    
+    custo = 0;
+    threshold = d;
     
     [custo,h1,h3] = CostControl_8shape_PID_KpKdKi(simulationTime,Pxatual, Pyatual, ...
                 Dx1, Dy1, Ex2, Ey2, Ex1, Ey1, Dx2, Dy2, ... 
@@ -68,11 +71,13 @@ elseif (shape == "ellipsis")
                               Dx1, Dy1, Ex1, Ey1, Dx2, Dy2, Ex2, Ey2, ...
                               Cx1, Cy1, Cx2 , Cy2, R1, R2,delta)
     
-    run('setPIDparams.m');
-    simulationTime = 160;
+    %run('setPIDparams.m');
     Kp = 19
     Ki = 0.075
     Kd = 25
+    
+    custo = 0;
+    threshold = d;
     
     [custo,h1,h3] = CostControl_Ellipsis_PID_KpKdKi(simulationTime,Pxatual, Pyatual, ...
                 Dx1, Dy1, Ex2, Ey2, Ex1, Ey1, Dx2, Dy2, ... 
