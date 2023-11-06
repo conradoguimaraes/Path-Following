@@ -15,23 +15,43 @@ end
 
 P(3) = plot(h1,x0,y0,'xr','MarkerSize',15);
 
-thetad = rad2deg(th);
-xrotated = x;
-yrotated = y;
+% thetad = rad2deg(th);
+% xrotated = x;
+% yrotated = y;
 
-VPlotHandler = drawVector(h1, VPlotHandler, ...
-                         xrotated,yrotated, ...
-                         v,thetad);
+% VPlotHandler = drawVector(h1, VPlotHandler, ...
+%                          xrotated,yrotated, ...
+%                          v,thetad);
+
+% VPlotHandler = drawArrowV2(h1, VPlotHandler, xrotated,yrotated,thetad);
+
+    
+    
 %         if (rem(costIndex,10)==0)
 %             thetad
 %         end
 try
-    vehicleImage = plotVehicleV2(xrotated,yrotated,thetad, vehicleImage);
-catch
+%     vehicleImage = plotVehicleV2(xrotated,yrotated,thetad, vehicleImage);
+%     thetad
+catch ME
+%     display(ME)
+%     thetad
 end
 ax1 = gca;
 
+% VPlotHandler = drawArrow(h1, VPlotHandler, xrotated,yrotated,thetad);
 
+% Alength = 1;
+% ArrowLength = 20;
+% angulo = thetad;
+% try
+%     arrow('Start',[x,y], ...
+%                     'Stop',[x+Alength*cosd(angulo),y+Alength*sind(angulo)],...
+%                     'Type','line',...
+%                     'Color','r',...
+%                     'Length',ArrowLength);
+% catch
+% end
 %-----------------------------------------
 
 %-----------------------------------------
@@ -43,7 +63,7 @@ else
     h3=figure(3); hold on, grid on
 end
 cla
-costArray(costIndex) = abs(d);
+%costArray(costIndex) = abs(d);
 
 if (t>=refT && use2laps == true)
     if (lapCounter == 1)

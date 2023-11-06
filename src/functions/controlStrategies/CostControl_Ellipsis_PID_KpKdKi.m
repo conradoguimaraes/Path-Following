@@ -1,5 +1,6 @@
 function [cost,handler1,handler3] = CostControl_Ellipsis_PID_KpKdKi(simulationTime,Px, Py, Dx1, Dy1, Ex2, Ey2, Ex1, Ey1, Dx2, Dy2, R1, R2, Cx1, Cy1, Cx2, Cy2, state, Kp, Kd, Ki, threshold, Q)
-
+    BREAK_MSGBOX = msgbox('Click OK to END peacefully the simulation. Otherwise minimise the window.','ToBreakSimulation','warn');
+    
     T = simulationTime;
     h = 0.1;
     %t = [0:h:T];
@@ -24,7 +25,16 @@ function [cost,handler1,handler3] = CostControl_Ellipsis_PID_KpKdKi(simulationTi
     cost = 0;
     costArray = (0:h:T)*0;
     costIndex = 1;
-
+    
+    %Initialize Angle Array:
+    thetaArray = (0:h:T)*0;
+    thetaArray(1) = th;
+    thetaIndex = 1;
+    
+    
+    %Initialize the Control Effort Array:
+    controlEffortArray = (0:h:T)*0;
+    
     
     vehicleImage = -1;
     VPlotHandler = -1;
@@ -147,8 +157,8 @@ function [cost,handler1,handler3] = CostControl_Ellipsis_PID_KpKdKi(simulationTi
         d_ant = d; %previous distance
         d;
         %-----------------------------------------
-        
-        
+        costArray(costIndex) = abs(d);
+        %-----------------------------------------
         %Update the Figures with the new values
         run('figure_Ellipsis_insideFORLoop.m')
 
@@ -161,21 +171,27 @@ function [cost,handler1,handler3] = CostControl_Ellipsis_PID_KpKdKi(simulationTi
         %is updated and moves (visually) with time
         pause(0.0000000000005)
         
-        
+        thetaArray(costIndex) = th;
         
         costIndex = costIndex + 1;
+        thetaIndex = thetaIndex + 1;
         
         %add the distance (which is the cost) - always absolute (positive)
         %so that we ignore the distance sign variations along the path
         cost = cost + abs(d); 
 
 
-
+        controlEffortArray(costIndex) = c;
+        
         if (cost > 99999999)
             continue
         end
         
-
+        
+        if (~ishandle(BREAK_MSGBOX))
+            simulationTime = t;
+            break
+        end
         
 
     end %end-for
@@ -191,7 +207,12 @@ function [cost,handler1,handler3] = CostControl_Ellipsis_PID_KpKdKi(simulationTi
     
     handler1 = h1;
     handler3 = h3;
-
+    
+    
+    
+    %Save Simulation Variables
+    run('saveSimulationVars_PID.m')
+    save(pwd + "\.simulationVars\" + ".ellipsisVars", char(NaN));
 end
 
 

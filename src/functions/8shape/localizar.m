@@ -21,9 +21,11 @@ function state = localizar(Px,Py, state,...
         state = 2;
     
     elseif (state == 2 && (Px >= Ex2 || Px >= Ex1))
+%     elseif (state == 2 && Px >= Ex2 && Px >= intersectX)
         state = 2;
         
-    elseif (state == 2 && Px < Ex1 && Px >= intersectX && Py <= intersectY)
+%     elseif (state == 2 && Px < Ex1 && Px >= intersectX && Py <= intersectY)
+    elseif (state == 2 && Px < 50.5 && Px >= intersectX)
         state = 3;
         
     elseif (state == 3 && Px < Ex1 && Px >= intersectX && Py <= intersectY)

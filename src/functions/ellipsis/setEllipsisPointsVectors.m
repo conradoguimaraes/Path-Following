@@ -1,4 +1,4 @@
-function set8shapePointsVectors()
+function setEllipsisPointsVectors()
     %Percurso: Reta2-Arco-Reta1-Arco
     %Corrigir o sentido dos arrays:
     %Arco-2 (sentido descendente) : flip(arc2)

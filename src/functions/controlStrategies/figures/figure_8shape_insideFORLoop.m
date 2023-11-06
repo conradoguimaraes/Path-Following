@@ -7,21 +7,24 @@ else
     h1=figure(1); hold on, grid on
 end
 
+% xVehicle = [xVehicle, x];
+% yVehicle = [yVehicle, y];
 if (t>=refT && use2laps == true)
     if (lapCounter == 1)
         plot(x,y,'xr','MarkerSize',15)
     end
     P(2) = plot(h1,x,y,'.-g');
 else
-    P(2) = plot(h1,x,y,'.-b');
+%     P(2) = plot(h1,xVehicle,yVehicle,'-b','LineWidth',2);
+    P(2) = plot(h1,x,y,'.b');
 end
 
 P(3) = plot(h1,x0,y0,'xr','MarkerSize',15);
 
-thetad = rad2deg(th);
-xrotated = x;
-yrotated = y;
-vehicleImage = plotVehicleV2(xrotated,yrotated,thetad, vehicleImage);
+% thetad = rad2deg(th);
+% xrotated = x;
+% yrotated = y;
+% vehicleImage = plotVehicleV2(xrotated,yrotated,thetad, vehicleImage);
 
 
 ax1 = gca;
@@ -37,7 +40,7 @@ else
     h3=figure(3); hold on, grid on
 end
 cla
-costArray(costIndex) = abs(d);
+%costArray(costIndex) = abs(d);
 
 if (t>=refT && use2laps == true)
     if (lapCounter == 1)

@@ -7,12 +7,12 @@ function vehicleImage = plotVehicleV2(x,y,thetad, vehicleImage)
 
     thetad = round(thetad);
     if (thetad > 360)
-        thetad = 1;
+        thetad = thetad - 360;
     end
     if (thetad < 0)
-        thetad = thetad + 359 - 45; 
+        thetad = thetad + 360; 
     else
-        thetad = thetad + 45;
+        thetad = thetad + 90;
         if (thetad+45>360)
             thetad = (thetad+45)-360;
         end

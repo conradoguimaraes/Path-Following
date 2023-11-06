@@ -20,6 +20,10 @@ function VPlotHandler = drawVector(figHandler, VPlotHandler, x0,y0,R,phi)
     %x0 = 5;
     %y0 = 5;
     
+    if (phi > -5 && phi < 5)
+        x1 = x1 + 0.8;
+    end
+    
     %Coordinates = [startX, startY, Xlength, Ylength]
     coordinates = [x0, y0, x1, y1];
     if exist('figHandler','var')

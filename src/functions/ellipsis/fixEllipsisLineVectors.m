@@ -1,4 +1,4 @@
-function fix8shapeLineVectors()
+function fixEllipsisLineVectors()
     %Passar as retas para arrays de muitos pontos
     %para depois os percorrermos no ciclo while
     global X_reta1 Y_reta1

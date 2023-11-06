@@ -38,6 +38,7 @@ n = [nx ny];
 %eqn2 = (Ay + l1*uy == Py + l2*ny);
 %[lambda1, lambda2] = solve(eqn1, eqn2, l1, l2);
 
+%
 solucao = [ux, -nx; uy, -ny] \ [Px-Ax; Py-Ay];
 lambda1 = solucao(1);
 lambda2 = solucao(2);
@@ -67,9 +68,9 @@ d = sqrt((Qx-Px)^2 + (Qy-Py)^2);
 %plot([A(1) B(1)], [A(2) B(2)],'-b')
 
 
-%plot(P(1), P(2), 'xr')
-%plot(Q(1), Q(2), 'or')
-%plot([P(1) Q(1)], [P(2) Q(2)],':m')
+% plot(P(1), P(2), 'xr')
+% plot(Q(1), Q(2), 'or')
+% plot([P(1) Q(1)], [P(2) Q(2)],':m')
 
 %legend("Segmento AB", "PxPy", "QxQx", "Segmento PQ", 'Location','best')
 %shg

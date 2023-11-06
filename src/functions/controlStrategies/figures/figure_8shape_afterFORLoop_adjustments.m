@@ -11,8 +11,7 @@ if (singleFigure == true)
     text(h1,x0-3,y0-0.5,"$(P_{x_0}, P_{y_0})$",'Color','red','FontSize',12,'Interpreter','latex')
 
     titulo1 = "Vehicle Position (t="+string(t)+"s) ";
-    %KvaluesString = "\{$K_p$="+string(Kp)+",$K_i$="+string(Ki)+",$K_d$="+string(Kd)+"\}";
-    KvaluesString = "\{Kp="+string(Kp)+",Ki="+string(Ki)+",Kd="+string(Kd)+"\}";
+    KvaluesString = "\{$K_p$="+string(Kp)+",$K_i$="+string(Ki)+",$K_d$="+string(Kd)+"\}";
     title(h1,titulo1+KvaluesString)
 
 
