@@ -10,6 +10,7 @@ path = trajectory2D(trajectoryName = "trajectory_eightshape_v1")
 #Build the Path segments
 path.eightShape(delta = pi/8)
 
-
-
+#Draw the Path
+environmentMap = envMap()
+environmentMap.drawEightShape(pathObject = path)
 
