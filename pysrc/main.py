@@ -14,3 +14,6 @@ path.eightShape(delta = pi/8)
 environmentMap = envMap()
 environmentMap.drawEightShape(pathObject = path)
 
+#Fix the straight lines:
+path.fixEightShapeLineVectors()
+
